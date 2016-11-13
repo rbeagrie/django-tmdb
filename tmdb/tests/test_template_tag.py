@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.utils import timezone
-from . import models
+from .. import models
 import tmdb3
 import datetime
 import time
