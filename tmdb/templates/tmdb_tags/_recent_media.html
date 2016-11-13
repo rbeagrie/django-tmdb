@@ -1,0 +1,36 @@
+<style type="text/css" media="screen">
+  .tmdb-each {
+    width: 100%;
+    clear: both;
+    overflow: auto;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+  }
+  .tmdb-img {
+    float: left;
+    overflow: hidden;
+    margin-right: 4px;
+  }
+  .tmdb-img img{
+    width: 30px;
+  }
+  .tmdb-title {
+    font-size: 12px;
+  }
+
+</style>
+
+<div id="tmdb-recent-media">
+    {% for media in recent_media %}
+    <div class="tmdb-each">
+        <div class="tmdb-img">
+            
+            <img src="{{ media.poster_url }}" title="{{ media.title }}" alt="{{ media.title }}" />
+        </div>
+        <div class="tmdb-title">
+            <a href="{{ media.title }}" alt="{{ media.title }}">{{ media.title }}</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
