@@ -1,18 +1,15 @@
 """Settings that need to be set in order to run the tests."""
 import os
-from django.core.exceptions import ImproperlyConfigured
 
-
-def get_env_setting(setting):
+def get_env_setting(setting, default):
     """ Get the environment setting or return exception """
     try:
         return os.environ[setting]
     except KeyError:
-        error_msg = "Set the %s env variable" % setting
-        raise ImproperlyConfigured(error_msg)
+        return default
 
-TMDB_API_KEY=get_env_setting('TMDB_API_KEY')
-TMDB_SESSION_ID=get_env_setting('TMDB_SESSION_ID')
+TMDB_API_KEY=get_env_setting('TMDB_API_KEY', '626b3a716f2469415c3d5b26433d445c')
+TMDB_SESSION_ID=get_env_setting('TMDB_SESSION_ID', '')
 
 DEBUG = True
 SITE_ID = 1

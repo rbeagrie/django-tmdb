@@ -76,7 +76,7 @@ class MediaManager(models.Manager):
             return recent_media
         else:
             return recent_media[:max_media]
-        
+
 
 class Media(models.Model):
     MOVIE = 'movie'
