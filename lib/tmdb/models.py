@@ -1,11 +1,12 @@
 from django.db import models
+from django.conf import settings
+
 import tmdb3
-import keys
 import datetime
 from django.utils import timezone
 
-tmdb3.set_key(keys.API_KEY)
-tmdb3.set_session(keys.SESSION_ID)
+tmdb3.set_key(settings.TMDB_API_KEY)
+tmdb3.set_session(settings.TMDB_SESSION_ID)
 
 def get_poster_url(movie):
     min_size = movie.poster.sizes()[0]
