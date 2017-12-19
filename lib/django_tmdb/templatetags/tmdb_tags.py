@@ -8,5 +8,4 @@ def tmdb_recent_media():
 
     recent_media = Media.objects.recently_rated(max_media=5)
                 
-    print recent_media
     return {'recent_media': recent_media}
