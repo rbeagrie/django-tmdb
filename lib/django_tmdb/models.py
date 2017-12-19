@@ -95,6 +95,12 @@ class Media(models.Model):
     def __repr__(self):
         return '<TMDB {}: {}>'.format(self.media_type.capitalize(), self.title)
 
+    def get_tmdb_url(self):
+        if self.media_type == 'movie':
+            return 'https://www.themoviedb.org/movie/{id}'.format(id=self.tmdb_id)
+        elif self.media_type == 'series':
+            return 'https://www.themoviedb.org/tv/{id}'.format(id=self.tmdb_id)
+
     @classmethod
     def movie_from_tmdb(cls, tmdb_movie):
 

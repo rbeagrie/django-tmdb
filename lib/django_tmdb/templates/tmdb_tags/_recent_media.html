@@ -28,7 +28,7 @@
             <img src="{{ media.poster_url }}" title="{{ media.title }}" alt="{{ media.title }}" />
         </div>
         <div class="tmdb-title">
-            <a href="{{ media.title }}" alt="{{ media.title }}">{{ media.title }}</a>
+            <a href="{{ media.get_tmdb_url }}" alt="{{ media.title }}">{{ media.title }}</a>
         </div>
     </div>
     {% endfor %}

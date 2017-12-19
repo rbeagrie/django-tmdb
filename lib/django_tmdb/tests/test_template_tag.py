@@ -327,3 +327,16 @@ class TMDBTemplateTagTest(TestCase):
 
         rendered = self.TEMPLATE.render(Context({}))
         self.assertIn(movie.title, rendered)
+
+    @patch.object(models, 'get_rated_tv', MockGetRated('series'))
+    @patch.object(models, 'get_rated_movies', MockGetRated('movie'))
+    def test_movie_has_link(self):
+
+        movie = models.Media.objects.create(
+                tmdb_id=101, title='101 Dalmations',
+                media_type='movie', release=datetime.date.today())
+        movie.save()
+
+        rendered = self.TEMPLATE.render(Context({}))
+        self.assertIn(movie.get_tmdb_url(), rendered)
+
