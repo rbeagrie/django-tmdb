@@ -1,4 +1,4 @@
 include README.md
-include lib/tmdb/templates/tmdb_tags/_recent_media.html
-include lib/tmdb/tests/test_app/templates/400.html
-include lib/tmdb/tests/test_app/templates/500.html
+include lib/django_tmdb/templates/tmdb_tags/_recent_media.html
+include lib/django_tmdb/tests/test_app/templates/400.html
+include lib/django_tmdb/tests/test_app/templates/500.html

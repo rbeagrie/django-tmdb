@@ -59,8 +59,8 @@ EXTERNAL_APPS = [
 ]
 
 INTERNAL_APPS = [
-    'tmdb',
-    'tmdb.tests.test_app',
+    'django_tmdb',
+    'django_tmdb.tests.test_app',
 ]
 
 INSTALLED_APPS = EXTERNAL_APPS + INTERNAL_APPS
