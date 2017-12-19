@@ -929,3 +929,15 @@ class Series(NameRepr, Element):
                                  locale=self._locale)
         res._name = u'Similar to {0.name}'.format(self)
         return res
+
+    @classmethod
+    def ratedtv(cls, session=None):
+        if session is None:
+            session = get_session()
+        account = Account(session=session)
+        res = SeriesSearchResult(
+                    Request('account/{0}/rated/tv'.format(account.id),
+                            session_id=session.sessionid))
+        res._name = "Series You Rated"
+        return res
+
