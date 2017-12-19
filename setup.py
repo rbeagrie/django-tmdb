@@ -18,12 +18,12 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='django-tmdb',
+    name='django-tmdb3',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.1.0-alpha.1',
+    version='0.1.0',
 
     description='A django app for displaying information from TMDB',
     long_description=long_description,
