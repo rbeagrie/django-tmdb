@@ -12,6 +12,8 @@ engines:
     enabled: true
   radon:
     enabled: true
+  pep8:
+    enabled: true
 ratings:
   paths:
   - "**.inc"
@@ -22,5 +24,5 @@ ratings:
   - "**.py"
   - "**.rb"
 exclude_paths:
-  - "**/tests/"
-  - "**/migrations/"
+- "**/tests/"
+- "**/migrations/"
