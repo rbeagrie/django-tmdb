@@ -75,8 +75,8 @@ from .tmdb_auth import get_session, set_session
 from .tmdb_exceptions import *
 
 import json
-import urllib
-import urllib2
+import urllib.request, urllib.parse, urllib.error
+import urllib.request, urllib.error, urllib.parse
 import datetime
 
 DEBUG = False
