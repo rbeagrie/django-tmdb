@@ -269,7 +269,7 @@ class Image(Element):
         return self.filename == other.filename
 
     # special handling for boolean to see if exists
-    def __nonzero__(self):
+    def __bool__(self):
         if len(self.filename) == 0:
             return False
         return True

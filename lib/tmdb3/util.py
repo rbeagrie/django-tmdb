@@ -397,6 +397,5 @@ class ElementType( type ):
         return obj
 
 
-class Element( object ):
-    __metaclass__ = ElementType
+class Element( object, metaclass=ElementType ):
     _lang = 'en'
