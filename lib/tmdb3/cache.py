@@ -83,7 +83,7 @@ class Cache(object):
                 w = 10 - (time.time() - self._rate_limiter.pop(0))
                 if (w > 0):
                     if DEBUG:
-                        print "rate limiting - waiting {0} seconds".format(w)
+                        print("rate limiting - waiting {0} seconds".format(w))
                     time.sleep(w)
             return None
 
