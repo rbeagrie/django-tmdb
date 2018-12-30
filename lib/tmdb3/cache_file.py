@@ -16,10 +16,10 @@ import time
 import os
 import io
 
-from cStringIO import StringIO
+from io import StringIO
 
-from tmdb_exceptions import *
-from cache_engine import CacheEngine, CacheObject
+from .tmdb_exceptions import *
+from .cache_engine import CacheEngine, CacheObject
 
 ####################
 # Cache File Format

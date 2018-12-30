@@ -10,11 +10,11 @@
 import time
 import os
 
-from tmdb_exceptions import *
-from cache_engine import Engines
+from .tmdb_exceptions import *
+from .cache_engine import Engines
 
-import cache_null
-import cache_file
+from . import cache_null
+from . import cache_file
 
 DEBUG = False
 
