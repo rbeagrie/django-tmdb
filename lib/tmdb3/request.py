@@ -115,7 +115,7 @@ class Request(urllib.request.Request):
         url = self.get_full_url()
         try:
             # catch HTTP error from open()
-            data = json.load(self.open())
+            data = json.loads(self.open().read().decode('utf-8'))
         except TMDBHTTPError as e:
             try:
                 # try to load whatever was returned

@@ -195,7 +195,10 @@ class FileCacheObject(CacheObject):
     def load(self, fd):
         fd.seek(self.position)
         self._buff.seek(0)
-        self._buff.write(fd.read(self.size))
+        try:
+            self._buff.write(fd.read(self.size))
+        except TypeError:
+            self._buff.write(fd.read(self.size).decode('UTF-8'))
 
     def dumpslot(self, fd):
         pos = fd.tell()
@@ -204,7 +207,10 @@ class FileCacheObject(CacheObject):
     def dumpdata(self, fd):
         self.size
         fd.seek(self.position)
-        fd.write(self._buff.getvalue())
+        try:
+            fd.write(self._buff.getvalue())
+        except TypeError:
+            fd.write(self._buff.getvalue().encode('UTF-8'))
 
 
 class FileEngine( CacheEngine ):
