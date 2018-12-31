@@ -107,7 +107,7 @@ class Request(urllib.request.Request):
 
     def read(self):
         """Return result from specified URL as a string."""
-        return self.open().read()
+        return self.open().read().decode('utf-8')
 
     @cache.cached(urllib.request.Request.get_full_url)
     def readJSON(self):
